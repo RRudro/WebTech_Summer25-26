@@ -1,62 +1,71 @@
+
 <!DOCTYPE html>
-<html lang ="en-US">
+<html lang="en-US">
 <head>
-    <title> User Registration Form </title>
+    <meta charset="UTF-8">
+    <title>Patient Registration Form</title>
 </head>
 <body>
-    <h1> Patient Registration Form </h1>
+
+    <h1>Patient Registration Form</h1>
+
     <form>
-    <table>
+        <table>
+            <tr>
+                <td><label for="patientname"><b>Patient Name:</b></label></td>
+                <td><input type="text" id="patientname" name="patientname" placeholder="Enter Your Name"></td>
+                <td><br><br></td>
+            </tr>
 
-        <tr>
-            <td><label for = "patientname"> <b> Patient Name: </b> </label></td>
-            <td><input type ="text" id = name name = patientname  placeholder="Enter Yoru Name"></td>
-            <td> <br><br> </td>
-        </tr>
+            <tr>
+                <td><label for="patientphone"><b>Patient Phone Number:</b></label></td>
+                <td><input type="text" id="patientphone" name="patientphone" placeholder="Enter Your Phone Number"></td>
+                <td><br><br></td>
+            </tr>
 
-        <tr>
-            <td><label for = "patientphone"> Patient Phone Number:  </label> </td>
-            <td><input type ="text" id = phone name = patientphone  placeholder="Enter Yoru Phone Number"> </td>
-            <td> <br><br> </td>
-        </tr>
+            <tr>
+                <td><label for="patientDOB"><b>Patient DOB:</b></label></td>
+                <td><input type="date" id="patientDOB" name="patientDOB"></td>
+                <td><br><br></td>
+            </tr>
 
-        <tr>
-        <td> <label for = "patientDOB"> Patient DOB:  </label></td>
-        <td> <input type ="date" id = DOB name = patientDOB ></td>  
-        <td><br><br> </td>
-        </tr>
+            <tr>
+                <td><b>Gender:</b></td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male"><b>Male</b></label>
 
-        
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female"><b>Female</b></label>
+                </td>
+                <td><br><br></td>
+            </tr>
 
-        
-        
-        
+            <tr>
+                <td><label for="password"><b>Patient Password:</b></label></td>
+                <td><input type="password" id="password" name="patientpass"></td>
+                <td><br><br></td>
+            </tr>
 
-       
-        
-        <label for = "Gender"> Gender:  </label>
-        <input type ="radio" id = male name = male value =Male > Male
-        <input type ="radio" id = female name = female value =Female > Female
-        <br><br>
+            <tr>
+                <td><label for="email"><b>Patient Email:</b></label></td>
+                <td><input type="email" id="email" name="patientemail"></td>
+                <td><br><br></td>
+            </tr>
 
-        <label for = "patientpass"> Patient Password:  </label>
-        <input type ="password" id = password name = patientpass >
-        <br><br>
+            <tr>
+                <td><label for="file"><b>Patient Medical Document:</b></label></td>
+                <td><input type="file" id="file" name="patientFile"></td>
+                <td><br><br></td>
+            </tr>
 
-        <label for = "patientemail"> Patient Email:  </label>
-        <input type ="email" id = email  name = patientemail>
-        <br><br>
-
-        <label for = "patientFile"> Patient Medical Document:  </label>
-        <input type ="file" id = file name = patientFile >
-        <br><br>
-
-        <input type ="submit" id = submit  name=signup value = Signup>
-        
-    </table>
-        
-
-
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Signup"></td>
+                <td><br><br></td>
+            </tr>
+        </table>
     </form>
+
 </body>
 </html>
