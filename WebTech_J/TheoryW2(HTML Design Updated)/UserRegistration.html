@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title> Signup </title>
+    </head>
+    <body>
+        <h1> User Registration Form </h1>
+        <form> 
+            <fieldset> 
+            <legend> User Information </legend>
+            <table>
+           
+                <tr> 
+                    <td> <label for="user"> Name: </label> </td>
+                    <td><input type ="text" id =name name =name> </td>
+                </tr>
+
+                <tr>
+                    <td>  <label for="phone"> User Phone Number: </label> </td>
+                    <td>  <input type ="text" id =phone name =phone> </td>
+                </tr>
+
+                <tr>
+                <td>  <label for="Gender"> Gerder: </label>  </td>
+                <td> 
+                     <input type ="radio" id =Gender name= Gender value="Male">
+                     <label for="Male"> Male </label>
+                     <input type ="radio" id =Gender name= Gender value="Female"> 
+                     <label for="Female"> Female </label>
+                </td>
+                </tr>
+            
+            <tr>
+                <td> <label for="DOB"> Date of Birth: </label> </td>
+                <td><input type ="date" id = DOB name = DOB> </td>
+            </tr>
+           
+           <tr>
+            <td> <label for="file"> Data File Upload: </label> </td>
+            <td> <input type ="file" id = file name = file> </td>
+           </tr>
+           <tr>
+            <td> <label for="address"> Address: </label> </td>
+            <td> <textarea id = Address cols="20" rows="10" style="resize:none">  
+            </textarea> </td>
+           </tr>
+
+           <tr>
+            <td><label for="Password"> Password: </label></td>
+            <td> <input type ="password" id = pass name = pass></td>
+           </tr>
+
+           <tr>
+            <td> <label for="Usercountry"> User Citizenship </label></td>
+            <td> 
+                <select id="country"> 
+                    <option value="Default"> -----------Select  Country----- </option>
+                    <option value="BD"> Bangladesh </option>
+                    <option values="UK"> United Kingdom </option>
+                </select>
+            </td>
+           </tr>
+
+           <tr> 
+            <td> <label for="userinterest"> User Interests: </label></td>
+            <td>
+            <input type ="checkbox" id ="sports" name="Interests" value="Sports">
+            <label for="Sports"> Sports </label>
+            <br>
+            <input type ="checkbox" id ="reading" name="Interests" value="reading">
+            <label for="reading"> Reading </label>
+            </td>
+           </tr>
+
+           <tr>
+            <td>
+                <input type="checkbox" id="Conditions" name="Conditions" value="Conditions">
+                <label for="Conditions"> <font color="red"> I Agree Terms and Conditions * </font></label>
+                <label for="Conditions"> <font color="red"> I Agree Terms and Conditions * </font></label>
+            </td>
+           </tr>
+
+
+        </fieldset>
+
+      
+
+
+        <tr>
+            <td><input type="submit" id = submit name = submit value = "SignUp"> </td>
+        </tr>
+            
+            </table>
+
+
+
+
+
+            
+
+
+        </form>
+
+    </body>
+</html>
