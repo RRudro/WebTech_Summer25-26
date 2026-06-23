@@ -104,6 +104,64 @@ input[type="submit"]:hover{
     background-color: black;
 }
 
+.position-examples{
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px dashed #4a4a4a;
+    background-color: #f0f8ff;
+    position: relative;
+}
+
+.position-examples h2{
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #003366;
+}
+
+.position-box{
+    width: 220px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background-color: #e6f2ff;
+    font-weight: bold;
+}
+
+.position-box.static{
+    position: static;
+}
+
+.position-box.relative{
+    position: relative;
+    top: 10px;
+    left: 15px;
+    background-color: #d1ffd1;
+}
+
+.position-box.absolute{
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    width: 240px;
+    background-color: #fff3b0;
+}
+
+.position-box.sticky{
+    position: sticky;
+    top: 0;
+    background-color: #cfe8ff;
+}
+
+.position-box.fixed{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 240px;
+    background-color: #ffcccc;
+    z-index: 999;
+}
+
 /* #Conditions{
     display: inline;
     color:black
