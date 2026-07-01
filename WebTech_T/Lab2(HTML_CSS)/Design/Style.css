@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: wheat;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.container{
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 20px;
+    align-items: baseline;
+}
+
+h1{
+    color: blue;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+form{
+    display: flex;
+}
+fieldset{
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: antiquewhite;
+}
+
+legend{
+    padding: 10px;
+    background-color:black;
+    color: white;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+table{
+    width: auto;
+}
+tr{
+    margin-bottom: 10px;
+}
+td{
+    padding: 8px;
+}
+label{
+    margin-bottom: 10px;
+}
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="file"],
+input[type="password"],
+select, 
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 0 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 14px; 
+}
+input[type="checkbox"]{
+    cursor: pointer;
+}
+
+input[type="checkbox"] + label{
+    display: inline;
+    margin-right: 10px;
+}
+input[type="submit"],
+input[type="reset"]{
+    background-color: red;
+    color:white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 100%;
+    margin-top: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    background-color: black;
+}
+input[type="reset"]:hover{
+    background-color:blue;
+}
+.Header h1{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin-bottom: 0%;
+    
+}
+.topnav{
+    background-color: aqua;
+    padding: 10px;
+    margin-top: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.topnav a{
+    float:left;
+    display: block;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: dashed;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+.footer h2{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+}
