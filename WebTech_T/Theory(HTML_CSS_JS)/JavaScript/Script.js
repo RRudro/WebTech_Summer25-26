@@ -1,20 +1,20 @@
 console.log("HTML Connected");
-// let a=10.50;
-// var b=20;
-// sum=a+b;
-// sub=a-b
-// x=a+b;
-// console.log(sum);
-// console.log(sub);
-// console.log(x);
+let a=10.50;
+var b=20;
+sum=a+b;
+sub=a-b
+x=a+b;
+console.log(sum);
+console.log(sub);
+console.log(x);
 
-// let name="AIUB";
-// name='BUET';
-// console.log(name);
+let name="AIUB";
+name='BUET';
+console.log(name);
 
-// a="ASDFGHJKLWERTYUIO";
-// var text=a.length;
-// console.log(text);
+a="ASDFGHJKLWERTYUIO";
+var text=a.length;
+console.log(text);
 function collect_data()
 {
     let pname=document.getElementById("name").value;
