@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title> SignUp </title>
+        <link rel="stylesheet" href="../Design/Style.css">
+        <script src="../JavaScript/Script.js"> </script>
+    </head>
+    <body>
+
+<div class="postion">
+        <div class="Header">
+           <h1> User Registartion Form </h1>
+        </div>
+        <div class="topnav">
+            <a href="https://aiub.edu/" target="_blank"> AIUB WebSite </a>
+            <a href="https://portal.aiub.edu/" target="_blank"> AIUB Portal  </a>
+        </div>
+</div>
+
+        <div class = "container">
+            <h1> Information </h1>
+        <fieldset>
+            <legend> User Personal Information </legend>
+    
+            <form onsubmit='return collect_data()'>
+            <table>
+                <tr> 
+                    <td><label for ="name"> Name : </label></td>
+                    <td><input type ="text" id ="name" name="name" placeholder="Enter Your Name"></td>
+                    <td> <p id="NameError"></p> </td>
+                </tr>
+
+                <tr>
+                    <td><label for ="DOB"> DOB : </label> </td>
+                    <td><input type ="date" id ="DOB" name="DOB"></td>
+                    <td> <p id="DOBError"></p></td>
+
+                </tr>
+
+                <tr>
+                    <td><label for ="Phone"> Phone Number : </label></td>
+                    <td><input type ="text" id ="Phone" name="Phone" placeholder="Enter Your Phone Number"></td>
+                </tr>
+
+                <tr>
+                    <td><label for ="Email"> Email : </label></td>
+                    <td><input type ="email" id ="Email" name="Email" placeholder="Enter Your Email"></td>
+                </tr>
+
+                <tr>
+                    <td><label for ="File"> National NID : </label></td>
+                    <td><input type ="file" id ="File" name="File"></td>
+                </tr>
+
+
+                <tr>
+                    <td> <label for ="Citizen"> Choose Citizenship: </label> </td>
+                    <td> 
+                        <select id="Citiezen"> 
+                            <option id="Default"> Select Country</option>
+                            <option id="BD"> Bangladesh  </option>
+                            <option id="USA"> USA  </option>
+                            <option id="UK"> USA  </option>
+                            <option id="Argentina"> Argentina  </option>
+                        </select>
+                    </td>
+                </tr>
+
+
+                <tr> 
+                    <td><label for ="Profession"> User Profession   : </label>  </td>
+                    <td>
+                        <input type="checkbox" id="Student" name="Profession">
+                        <label for ="Student"> Student </label>
+                        <br>
+                        <input type="checkbox" id="Faculty" name="Profession">
+                        <label for ="Faculty"> Faculty </label>
+                        <br>
+                        <input type="checkbox" id="PrivateJob" name="Profession">
+                        <label for ="PrivateJob"> Private Job Holder </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for ="Address"> Address: </label> </td>
+                    <td>
+                        <textarea id="Address" rows="10" cols="25" style="resize: none;">
+                        </textarea>
+                    </td>
+                </tr>
+        
+                
+                <tr> 
+                     <td><label for ="username"> User Name: </label> </td>
+                     <td><input type="text" id="username" name="username"></td>
+                </tr>
+                <tr>
+                    <td><label for ="Password"> Password: </label> </td>
+                     <td><input type="password" id="Password" name="Password"></td>
+                </tr>
+
+                <tr>
+                    <td><label for ="CPassword"> Confirm Password: </label> </td>
+                     <td><input type="password" id="CPassword" name="CPassword"></td>
+                </tr>
+<tr>
+                    <td><input type="checkbox" id="Condition" name="condtion">
+                    <label for ="Condition"> <font color="red">I have Agreed Terms and Conditions*</font> </label> </td>
+                </tr>
+
+
+
+                 </table> 
+        </fieldset>    
+        <input type = "submit" id ="submit" name ="submit" value =SignUp>
+        <input type = "reset" id ="reset" name ="reset">
+        </form>
+          </div>
+<div class="footer">
+    <h2> Created 2026 </h2>
+</div>
+    </body>
+</html
