@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../Design/Style.css">
+    <script src="../JS/script.js"></script>
+    <title>Signup</title>
+</head>
+<body>
+    <div class ="header"> 
+    <h1>Patient Registration Form</h1>
+    </div>
+    <div class="topnav">
+        <a href="https://aiub.edu/" target="_blank"> AIUB Website </a>
+        <a href="https://portal.aiub.edu/" target="_blank"> AIUB Portal </a>
+    </div>
+
+        
+    <div class="container">
+    <form onsubmit="return collect_data()">
+        <fieldset>
+            <legend> Patient Personal Information </legend>
+        <table>
+            <tr>
+                <td><label for="PatientName">Patient Name:</label></td>
+                <td>
+                    <input type="text" id="PatientName" name="PatientName"
+                           placeholder="Enter Your Name">
+                           <p id="NameError"> </p>
+                </td>
+                <!-- <td> 
+                    <p id="NameError"> </p>
+                </td> -->
+            </tr>
+
+            <tr>
+                <td><label for="PatientAge">Patient Age:</label></td>
+                <td>
+                    <input type="number" id="PatientAge" name="PatientAge" placeholder="Enter your Age">
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="PatientEmail">Patient Email:</label></td>
+                <td>
+                    <input type="email" id="PatientEmail" name="PatientEmail" placeholder="Enter your Email">
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="Gender">Patient Gender:</label></td>
+                <td>
+                    <input type="radio" id="PatientMale" name="Gender" value="Male">
+                    <label for="PatientMale">Male</label>
+                    <input type="radio" id="PatientFemale" name="Gender" value="Female">
+                    <label for="PatientFemale">Female</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Selected Doctor Dept:</label></td>
+                <td>
+                    <input type="checkbox" id="Medicine" name="DeptDoctor" value="Medicine">
+                    <label for="Medicine">Medicine</label>
+                    <input type="checkbox" id="Cardiac" name="DeptDoctor" value="Cardiac">
+                    <label for="Cardiac">Cardiac</label>
+                    <input type="checkbox" id="Neurology" name="DeptDoctor" value="Neurology">
+                    <label for="Neurology">Neurology</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="PatientFile">Patient Prescription:</label></td>
+                <td>
+                    <input type="file" id="PatientFile" name="PatientFile">
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="DOB">Patient DOB:</label></td>
+                <td>
+                    <input type="date" id="DOB" name="DOB">
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="Address">Patient Address:</label></td>
+                <td>
+                    <textarea id="Address" name="Address" rows="5" cols="20" Style= "resize:none" placeholder="Your Text Here"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="patientcitizen">Citizenship:</label></td>
+                <td>
+                    <select id="country" name="country">
+                        <option value="Default">-------- Select Country -----</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="UnitedKingdom">United Kingdom</option>
+                        <option value="Brazil">Brazil</option>
+                    </select>
+                </td>
+            </tr>
+            <tr> 
+                <td> <label for="username"> User Name: </label> </td>
+                <td> <input type="text" id="username" name="username"> </td>
+                </tr>
+                <tr>
+                    <td> <label for="password"> Password: </label> </td>
+                    <td> <input type="password" id="password" name="password"> </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="Conpassword">Confirm  Password: </label> </td>
+                    <td> <input type="password" id="Conpassword" name="Conpassword"> </td>
+                </tr>
+
+        <tr>
+            <td><input type="checkbox" id="Condition" name="Condition">
+        <label for="Condition"> <font color= "red"> I Agree Terms and Condition * </font></label></td>
+        </tr>
+        
+       <tr>
+        <td> 
+        <input type="submit" id="submit" name="submit">
+        <br>
+        <br>
+        <input type="reset" id="reset" name="reset" value="Reset">
+
+        </td>
+       </tr>
+        
+        </table>
+        </fieldset> 
+    </form>
+</div>
+<div class="footer"> 
+    <label for="footer"> Created 2026 </label>
+</div>
+</body>
+</html>
