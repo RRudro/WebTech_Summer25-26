@@ -1,5 +1,15 @@
 console.log("JS Connected");
 //JS Form Validation
+
+let array = ["ABC", "EDF"];
+array.forEach((item, index)=>{
+    console.log("Index: ", index, "Item:",item);
+})
+
+array.map((item,index)=>{
+    console.log("Index: ", index, "Item:",item);
+})
+
 let a = 10; 
 if(a>0)
 {
@@ -10,7 +20,7 @@ else if(a>=15)
     a++;
     console.log("Value of a: ",a);
 }
-let i=0;
+let i;
 for(i=0; i<10; i++)
 {
     console.log("value of i (for loop): ", i);
@@ -89,4 +99,5 @@ function collect_DOB()
     }
     return false;
 }
+ 
 
