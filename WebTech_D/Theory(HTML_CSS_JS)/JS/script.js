@@ -75,27 +75,49 @@ array.map((item, index)=>{
     console.log("Index: ",index, "Item: ", item);
 })
 
-
+function collect_data()
+{
+    let IsvalidName= collect_name();
+    let IsvalidAge= collect_age();
+    // let IsvalidEmail= collect_email();
+    return false;
+}
 function collect_name()
 {
     let Username=document.getElementById("PatientName").value;
     if(Username=="")
     {
         document.getElementById("NameError").innerHTML="Name Can Not Be Empty";
-        return true;
+        return false;
     }
     if(Username.length<5)
     {
         document.getElementById("NameError").innerHTML="Name at least 5 char";
-        return true;
+        return false;
     }
-    return true;
+    console.log(Username);
+    return false;
 }
-
-function collect_data()
+function collect_age()
 {
-    let IsvalidName= collect_name();
-    let IsvalidAge= collect_age();
-    let IsvalidEmail= collect_email();
+    let age= document.getElementById("PatientAge").value;
+    if(age>0)
+    {
+         if(age=="")
+    {
+        document.getElementById("AgeError").innerHTML="Age Can Not Be Empty";
+        return false;
+    }
+    if(age<18)
+    {
+        document.getElementById("AgeError").innerHTML="You are Minor";
+        return false;
+    }
+    }
+    else{
+        document.getElementById("AgeError").innerHTML="Age Can Not Be Negative";
+    }
+   
+    console.log(age);
     return false;
 }
