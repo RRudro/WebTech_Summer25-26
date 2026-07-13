@@ -42,6 +42,10 @@ function collect_data()
 {
    let isNameValid=collect_name(); 
    let isDOBValid=collect_DOB();
+   let isvalidPhone=collect_phone();
+   let isvalidemail=collect_email();
+   let isvalidcitizen=collect_citizenship();
+   let isprofesstion=collect_professtion();
    return false;
 }
 function collect_name()
@@ -72,3 +76,66 @@ function collect_DOB()
         console.log(DOB);
         return false;
 }
+
+function collect_phone()
+{
+    let phone = document.getElementById("Phone").value;
+    if(phone=="")
+    {
+        document.getElementById("PhoneError").innerHTML="Phone Is Required";
+        return false;
+    }
+    if(phone.length!=11)
+    {
+        document.getElementById("PhoneError").innerHTML="Phone Must Be 11 Digits";
+        return false;
+    }
+    return false; 
+}
+
+function collect_email()
+{
+    let email = document.getElementById("Email").value;
+    let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(email=="")
+    {
+        document.getElementById("EmailError").innerHTML="Email Can Not Be Empty";
+        return false;
+    }
+    if(!pattern.test(email))
+    {
+        document.getElementById("EmailError").innerHTML="Invalid Email Format";
+        return false;
+    }
+    return false;
+}
+function collect_citizenship()
+{
+    let country = document.getElementById("Citizen").value;
+    if(country=="")
+    {
+        document.getElementById("CitizenError").innerHTML="Select Specific Country";
+        return false;
+    }
+    if(country=="Select Country")
+    {
+        document.getElementById("CitizenError").innerHTML="Select Specific Country";
+        return false;
+    }
+    return false;
+}
+function collect_professtion()
+{
+    let student=document.getElementById("Student").checked;
+    let faculty=document.getElementById("Faculty").checked;
+    let privatejob=document.getElementById("PrivateJob").checked;
+    if(!student && !faculty && !privatejob)
+    {
+        document.getElementById("ProfesstionError").innerHTML="Select At least One";
+        return false;
+    }
+    return false; 
+}
+
+
+
