@@ -134,7 +134,8 @@ function collect_professtion()
         document.getElementById("ProfesstionError").innerHTML="Select At least One";
         return false;
     }
-    return false; 
+    
+    return false;
 }
 
 
