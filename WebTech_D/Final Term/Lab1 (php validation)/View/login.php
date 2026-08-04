@@ -19,7 +19,7 @@ include "../Controller/Loginvalidation.php";
                 }
                 if(password.length <5)
                 {
-                    messaage+="Password Must be 5 Char";
+                    message+="Password Must be 5 Char";
                     valid = false;
                 }
                 if(!valid)
