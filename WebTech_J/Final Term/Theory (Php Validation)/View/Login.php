@@ -1,50 +1,65 @@
-
+<?php
+include "../Controller/Loginvaliadation.php";
+?>
 <!DOCTYPE html>
 <html>
     <head>
     <title>LogIn Page</title>
+    <script>
+        function collect_data()
+        {
+            let name = document.getElementById("name").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let valid= true;
+            let message ="";
+
+            if(name.length<5)
+            {
+                message+="User Name Must Be 5 charecter";
+                valid=false;
+            }
+            if(password.length<5)
+            {
+                message+="password Must Be 5 charecter";
+                valid=false;
+            }
+
+            if(!valid)
+            {
+                alert(message);
+            }
+
+            return valid;
+        }
+    </script>
     </head>
     <body>
-        <table>
-            <tr>
-            <td> <label for="UserName"> User Name: </label></td>
-            <td> <input type="text" id="Name" name ="name"></td>
-            </tr>
-            <tr>
-                <td> <label for="password"> Password:  </label></td>
-                <td> <input type = "password" id="pass" name ="pass"</td>
-            </tr>
-            
-             
-            
-        </table>
-        <input type ="submit" id="submit" value="LogIn">
-        <input type ="submit" id="submit" value="Reset">
-        <br>
-        <?php
-        echo "Hello World";
-        ?>
-        <br>
+    <form method="post" onsubmit="return collect_data()" action="">
+    <table>
+        <tr>
+            <td>
+                <label for="Username"> User Name: </label>
+            </td>
+            <td> 
+                <input type ="text" id="name" name="name">
+                <?php echo $name; ?>
+            </td>
+        </tr>
+        <tr>
+            <td> <label for="pass"> Password: </label></td>
+            <td> <input type ="password" id="password" name="password">
+            <?php echo $password; ?>
+        </td> 
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" id="submit" name="submit" value="LogIn">
+                <input type="reset" id="reset" name="reset">
+
+            </td>
+        </tr>
+    </table> 
+
+    </form>
     </body>
 </html>
-<?php
-echo "Outside From The HTML";
-$text1 = "Hello Php";
-$text2 = "Web Technologies [J]";
-echo "<h1> $text1  </h1>";
-echo "<h1>$text1 $text2 </h1>";   
-echo '<h1>'.$text1.'</h1>';   
-$number1 = 5;
-$number2 = 10;
-echo $number1+$number2;
-echo "<br>";
-if($number1>=5)
-    {
-        $number1++;
-    }    
-    else{
-        echo $number2;
-    }
-    echo $number1;
-?>
-
