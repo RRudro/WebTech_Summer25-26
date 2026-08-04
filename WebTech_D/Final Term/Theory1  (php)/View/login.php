@@ -43,4 +43,14 @@ if($number1>=10)
         $number2+=$number1;
     }
 echo "Number 2: $number2";
+echo "<br>";
+$cars = array("ABC","DEF","GHI");
+var_dump($cars);
+echo "<br>";
+$cars2 = array("Brand"=>"Aarong", "Shop"=>"Uttara");
+echo $cars2["Brand"];
+echo "<br>";
+echo $cars2["Shop"];
+
+
 ?>
