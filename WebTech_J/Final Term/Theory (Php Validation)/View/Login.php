@@ -46,14 +46,5 @@ if($number1>=5)
         echo $number2;
     }
     echo $number1;
-echo"<br>";
-$cars = array("ABC", "DEF", "GHI");
-var_dump($cars);
-echo"<br>";
-$cars2 = array("brand"=>"TOYOTA", "Model"=>"CH-R", "Year"=>"2022");
-echo  $cars2["brand"]; 
-var_dump($cars2);
-
-
 ?>
 
