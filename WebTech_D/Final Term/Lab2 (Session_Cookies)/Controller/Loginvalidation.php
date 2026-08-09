@@ -26,15 +26,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
         if($valid)
             {
-                $_SESSION["logged_in"]==true;
-                $_SESSION["username"]==$name;
-                $message="Log In Successful! Session Created";
+                $_SESSION["logged_in"] = true;
+                $_SESSION["username"] = $name;
+                $message = "Log In Successful! Session Created";
             }
         if($remember){
             setcookie("remember_user", $name, time() + 60*60*24*7, "/");
         }
         else{
-          setcookie("remember_user", $name, time() - 3600, "/");  
+            setcookie("remember_user", "", time() - 3600, "/");
         }
 
 
