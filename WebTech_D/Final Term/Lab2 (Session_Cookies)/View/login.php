@@ -32,13 +32,6 @@ include "../Controller/Loginvalidation.php";
         </script>
     </head>
     <body>
-       <?php if (!empty($_SESSION["logged_in"])): ?>
-           <p>Welcome, <?php echo htmlspecialchars($_SESSION["username"]); ?>!</p>
-       <?php endif; ?>
-
-       <?php if (!empty($message)): ?>
-           <p><?php echo $message; ?></p>
-       <?php endif; ?>
 
        <form method="post" action="" onsubmit="return collect_data()"> 
         <table>
@@ -55,7 +48,14 @@ include "../Controller/Loginvalidation.php";
                 <?php echo $password ?>
             </td>
             </tr>
-            
+
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" id="remember" name="remember" value="1" <?php echo $remember ? 'checked' : ''; ?>>
+                    <label for="remember"> Remember Me</label>
+                </td>
+            </tr>
+
             <tr>
                 <td colspan="2">
                     <input type="submit" id="submit" value="LogIn">
