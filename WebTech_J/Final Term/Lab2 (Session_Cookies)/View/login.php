@@ -57,8 +57,8 @@ include "../Controller/Loginvalidation.php";
             </tr>
             <tr>
             <td colspan="2"> 
-            <input type ="checkbox" id="remember" name=remember><?php  echo (!empty($_COOKIE["remember_user"])) ? "Checked": ""; ?>
-            <label for="Remember Me"> Remember Me </label>
+            <input type="checkbox" id="remember" name="remember" value="1" <?php echo (!empty($_COOKIE["remember_user"])) ? "checked" : ""; ?>>
+            <label for="remember"> Remember Me </label>
             </td>
             </tr>
 
