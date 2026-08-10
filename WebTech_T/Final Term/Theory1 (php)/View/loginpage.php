@@ -24,6 +24,7 @@
     </body>
 </html>
 
+
 <?php
 $variable1 = "Hello World";
 $number1= 10.6;
@@ -33,4 +34,9 @@ echo "Sum: $sum";
 echo "<br>";
 echo "Text from the variable: $variable1";
 echo "<h1> Text from the variable: $variable1 </h1>";
+$cars=array("Toyota", "Mazda", "Suzuki");
+var_dump($cars);
+echo "<br>";
+$cars2 = array("Brand"=>"Toyota", "Model"=>"2004", "Color"=>"Red");
+echo $cars2["Brand"];
 ?>
