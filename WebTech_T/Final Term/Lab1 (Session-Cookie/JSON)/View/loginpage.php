@@ -10,7 +10,7 @@ include "../Controller/LoginValidation.php";
             function collect_data()
             {
                 let name= document.getElementById("username").value.trim();
-                let Password= document.getElementById("Password").value.trim();
+                let password= document.getElementById("password").value.trim();
                 let valid=true;
                 let message="";
                 if(name.length<5)
@@ -18,7 +18,7 @@ include "../Controller/LoginValidation.php";
                     message+="User Name Must be 5 Char";
                     valid=false;
                 }
-                if(Password.length<5)
+                if(password.length<5)
                 {
                     message+="Password Must be 5 Char";
                     valid=false;
@@ -35,23 +35,20 @@ include "../Controller/LoginValidation.php";
         <form method="post" action="" onsubmit="return collect_data()">
             <table> 
                 <tr>
-                    <td> <label for="UserName"> User Name: </label></td> 
-                  
+                    <td> <label for="username"> User Name: </label></td> 
                 <td> <input type="text" id="username" name="username" placeholder="Enter Your Name">
-                <?php echo $name; ?>    
             </td>
                 </tr>
 
                 <tr>
-                    <td> <label for="Password"> Password: </label></td>
-                <td> <input type="password" id="Password" name="Password">
-                <?php echo $password; ?>
+                    <td> <label for="password"> Password: </label></td>
+                <td> <input type="password" id="password" name="password">
                 </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
-                        <input type="checkbox" id="rememberuser" name="rememberuser" value="1"> <?php  echo $remember ? 'checked': ''; ?>
+                        <input type="checkbox" id="rememberuser" name="rememberuser" value="1" <?php echo $remember ? 'checked' : ''; ?>>
                         <label for="rememberuser"> Remember Me</label>
 
                     </td>
