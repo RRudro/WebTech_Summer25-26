@@ -48,6 +48,14 @@ include "../Controller/LoginValidation.php";
                 <?php echo $password; ?>
                 </td>
                 </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox" id="rememberuser" name="rememberuser" value="1"> <?php  echo $remember ? 'checked': ''; ?>
+                        <label for="rememberuser"> Remember Me</label>
+
+                    </td>
+                </tr>
                 
                 <tr>
                     <td colspan="2"> 

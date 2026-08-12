@@ -1,30 +1,41 @@
 <?php
-
 $name="";
 $password="";
-
+$message="";
+$remember=false;
+if(isset($_COOKIE["remember_user"]))
+    {
+        $name = $_COOKIE["remember_user"];
+        $remember=true;
+    }
+$valid=true;
 if($_SERVER["REQUEST_METHOD"]=="POST")
     {
-        $name=trim($_POST["username"] ?? "");
-        $password=trim($_POST["Password"] ?? "");
-
-        if(!empty($name) && strlen($name)>=5)
+        $name = trim($_POST["name"]?? "");
+        $password = trim($_POST["password"]?? "");
+        $remember = isset($_POST["rememberuser"]) && $_POST["rememberuser"] ==="1";
+        if(empty($name) || strlen($name)<=5)
             {
-                echo "User Name: ".$name;
-                echo "<br>";
+                $message="User Name Must be at least 5 Char";
+                $valid=false;
             }
-        else{
-            echo "User Name Must be at least 5 Char";
-        }
-
-        if(!empty($password) && strlen($password)>=5)
+        if(empty($password) || strlen($password)<=5)
             {
-                echo "Password: ".$password;
-                echo "<br>"; 
+                $message="Password must be 5 char";
+                $valid=false;
             }
-            else{
-                echo "Password Must be 5 Char";
+        if($valid)
+            {
+                $_SESSION["logged_In"] = true;
+                $_SESSION["username"] = $name;
+                if($remember)
+                    {
+                        setcookie("remember_user", $name, time()+86400*30, "/");
+                    }
+                    else{
+                        setcookie("remember_user", "", time()-3600);
+                    }
             }
+        
     }
-
 ?>
