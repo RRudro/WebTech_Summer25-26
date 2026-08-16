@@ -1,4 +1,5 @@
 <?php
+include "../Model/db.php";
 session_start();
 
 $name="";
@@ -52,12 +53,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             ];
         file_put_contents($jsonfile, json_encode($users, JSON_PRETTY_PRINT));
         }
-
+        $path="";
         if($file)
             {
                 $uploaddirectory="../Uploads/";
                 $path=$uploaddirectory.basename($file["name"]);
-                move_uploaded_file($file["name"], $path);
+                move_uploaded_file($file["tmp_name"], $path);
+            }
+        
+        $database= new db();
+        $connection=$database->connection();
+        $result=$database->signup($connection, "users", $name, $password, $path);
+        if($result)
+            {
+                Header("Location:../View/login.php");
+            }
+            else{
+                echo "please try again";
             }
 
         }
