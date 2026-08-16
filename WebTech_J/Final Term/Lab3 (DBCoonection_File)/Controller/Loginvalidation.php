@@ -1,4 +1,5 @@
 <?php
+include "../Model/db.php";
 session_start();
 $name="";
 $password="";
@@ -48,6 +49,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             ];
         file_put_contents($jsonfile, json_encode($users, JSON_PRETTY_PRINT));
         }
+
+        $database=new db();
+        $connection=$database->connection();
+        $result=$database->signin($connection, "users", $name, $password);
+        if($result !== false && $result->num_rows ==1)
+            {
+                Header("Location:../View/Dashboard.php");
+            }
+            else{
+                echo "Please try again";
+            }
             
         }
 }
