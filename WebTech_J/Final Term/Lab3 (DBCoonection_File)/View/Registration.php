@@ -34,7 +34,7 @@ include "../Controller/RegistrationValidation.php";
     <body>
 
 
-       <form  method="post" action="" onsubmit="return collect_data()"> 
+       <form enctype="multipart/form-data" method="post" action="" onsubmit="return collect_data()"> 
         <table>
             <tr>
                 <td> <label for="username"> User Name: </label></td>

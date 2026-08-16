@@ -3,7 +3,6 @@ session_start();
 $name="";
 $password="";
 $message="";
-$file="";
 $remember=false;
 
 if(isset($_COOKIE["remember_user"])){
@@ -13,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         $name=trim($_POST["name"] ?? "");
         $password=trim($_POST["password"] ?? "");
-        $file=$_FILES["file"];
+        $file=$_FILES["file"] ?? [];
         $remember=isset($_POST["remember"]) && $_POST["remember"] == "1";
         
         $valid=true;
@@ -55,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             {
                 $uploaddirectory="../Uploads/";
                 $path=$uploaddirectory.basename($file["name"]);
-                move_uploaded_file($file["temp_name"], $path);
+                move_uploaded_file($file["tmp_name"], $path);
             }
 
         }
