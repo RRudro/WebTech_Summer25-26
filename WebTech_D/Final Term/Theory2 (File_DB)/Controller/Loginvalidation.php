@@ -1,58 +1,29 @@
 <?php
-session_start();
+require_once __DIR__ . '/../../../../shared/php/Validation.php';
+require_once __DIR__ . '/../../../../shared/php/SessionAuth.php';
+require_once __DIR__ . '/../../../../shared/php/JsonUserStore.php';
 
-$name="";
-$password="";
-$message="";
-$remember=false;
-if(isset($_COOKIE["remember_user"]))
-    {
-        $name = $_COOKIE["remember_user"];
-        $remember = true;
+start_session_once();
+
+$jsonfile = __DIR__ . '/../Model/user.json';
+$name = remembered_username();
+$password = "";
+$message = "";
+$remember = $name !== "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = posted_value("name");
+    $password = posted_value("password");
+    $remember = posted_checkbox("remember");
+
+    $validation = validate_credentials($name, $password);
+    $message = $validation["message"];
+
+    if ($validation["valid"]) {
+        create_login_session($name);
+        apply_remember_cookie($name, $remember);
+        append_user($jsonfile, $name, $password);
+        $message = "Session Created";
     }
-
-$valid=true;
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $name = trim($_POST["name"] ?? "");
-    $password = trim($_POST["password"] ?? "");
-    $remember = isset($_POST["remember"]) && $_POST["remember"] === "1";
-    if(empty($name) || strlen($name)<5){
-        $message="User Name Must be at least 5 Char";
-        $valid=false;
-    }
-
-    if(empty($password) || strlen($password)<5){
-        $message="Password Must be at least 5 Char";
-        $valid=false;
-    }
-    
-    if($valid)
-        {
-            $_SESSION["logged_in"] = true;
-            $_SESSION["username"] = $name;
-            $message= "Session Created";
-            if($remember)
-                {
-                    setcookie("remember_user", $name, time()+ 86400*30, "/");
-                }
-                else{
-                    setcookie("remember_user", "", time()-3600, "/");
-                }
-        $jsonfile="../Model/user.json";
-        $users =[];
-        if(file_exists($jsonfile)){
-            $jsonData= file_get_contents($jsonfile);
-            $users=json_decode($jsonData, true) ?? [];
-           
-            $users []=[
-                'username' => $name,
-                'password' => password_hash($password, PASSWORD_DEFAULT),
-                'timestamp' => time()
-            ];
-        file_put_contents($jsonfile, json_encode($users, JSON_PRETTY_PRINT));
-        }
-        }
-
 }
-
 ?>
