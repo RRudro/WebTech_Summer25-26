@@ -1,5 +1,5 @@
 <?php
-include "../Controller/Loginvaliadation.php";
+require "../Controller/Loginvaliadation.php";
 ?>
 <!DOCTYPE html>
 <html>

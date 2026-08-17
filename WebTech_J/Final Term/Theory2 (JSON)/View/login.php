@@ -1,5 +1,5 @@
 <?php
-include "../Controller/Loginvalidation.php";
+require "../Controller/Loginvalidation.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,6 +32,7 @@ include "../Controller/Loginvalidation.php";
         </script>
     </head>
     <body>
+        <?php if(!empty($message)) { echo "<p>".htmlspecialchars($message)."</p>"; } ?>
 
 
        <form  method="post" action="" onsubmit="return collect_data()"> 

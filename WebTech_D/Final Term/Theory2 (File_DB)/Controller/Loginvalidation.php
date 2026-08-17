@@ -39,18 +39,45 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     setcookie("remember_user", "", time()-3600, "/");
                 }
         $jsonfile="../Model/user.json";
-        $users =[];
-        if(file_exists($jsonfile)){
-            $jsonData= file_get_contents($jsonfile);
-            $users=json_decode($jsonData, true) ?? [];
-           
-            $users []=[
-                'username' => $name,
-                'password' => password_hash($password, PASSWORD_DEFAULT),
-                'timestamp' => time()
-            ];
-        file_put_contents($jsonfile, json_encode($users, JSON_PRETTY_PRINT));
-        }
+        $users=[];
+        if(file_exists($jsonfile))
+            {
+                $jsonData=file_get_contents($jsonfile);
+                if($jsonData === false)
+                    {
+                        $message="Could not read ".$jsonfile;
+                        $valid=false;
+                    }
+                elseif(trim($jsonData) !== "")
+                    {
+                        $users=json_decode($jsonData, true);
+                        if(!is_array($users))
+                            {
+                                $message="Could not read ".$jsonfile.": ".json_last_error_msg();
+                                $valid=false;
+                                $users=[];
+                            }
+                    }
+            }
+        if($valid)
+            {
+                $users[]=[
+                    'username'=> $name,
+                    'password'=> password_hash($password, PASSWORD_DEFAULT),
+                    'timestamp'=> time()
+                ];
+                $encoded=json_encode($users, JSON_PRETTY_PRINT);
+                if($encoded === false)
+                    {
+                        $message="Could not encode the user list: ".json_last_error_msg();
+                        $valid=false;
+                    }
+                elseif(file_put_contents($jsonfile, $encoded, LOCK_EX) === false)
+                    {
+                        $message="Could not write ".$jsonfile;
+                        $valid=false;
+                    }
+            }
         }
 
 }

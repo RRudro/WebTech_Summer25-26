@@ -1,4 +1,7 @@
 <?php
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
 class db{
     function connection()
     {
@@ -6,24 +9,35 @@ class db{
         $db_user="root";
         $db_password="";
         $db_name="Section_J";
-        $connection= new mysqli($db_host, $db_user, $db_password, $db_name);
-        if($connection->connect_error)
-            {
-                die("Please Connect The Database");
-            }
+        try{
+            $connection= new mysqli($db_host, $db_user, $db_password, $db_name);
+        }
+        catch(mysqli_sql_exception $error){
+            throw new RuntimeException("Database connection failed: ".$error->getMessage(), 0, $error);
+        }
     return $connection;
     }
 
     function signup($connection,$tablename,$username,$password,$file)
     {
         $sql="INSERT INTO ".$tablename."(username, password, file) VALUES ('".$username."', '".$password."', '".$file."')";
-        $result=$connection-> query($sql);
+        try{
+            $result=$connection-> query($sql);
+        }
+        catch(mysqli_sql_exception $error){
+            throw new RuntimeException("Sign up failed: ".$error->getMessage(), 0, $error);
+        }
         return $result;
     }
     function signin($connection,$tablename,$username,$password)
     {
         $sql="SELECT * FROM ".$tablename." WHERE username ='".$username."' AND password ='".$password."'";
-        $result=$connection->query($sql);
+        try{
+            $result=$connection->query($sql);
+        }
+        catch(mysqli_sql_exception $error){
+            throw new RuntimeException("Sign in failed: ".$error->getMessage(), 0, $error);
+        }
         return $result;
     }
 
