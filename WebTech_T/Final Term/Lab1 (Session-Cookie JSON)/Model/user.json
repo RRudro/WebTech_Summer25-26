@@ -1,12 +1,7 @@
 [
     {
         "username": "Rudro",
-        "password": "123456789",
-        "timestamp": 1786506131
-    },
-    {
-        "username": "Rudro",
-        "password": "$2y$10$CK8EDlUCseqprr32qSaKt.iq3auTWe5k4Yzl6zUdnrMhH2\/Mc7.Q2",
+        "password": "$2y$10$CK8EDlUCseqprr32qSaKt.iq3auTWe5k4Yzl6zUdnrMhH2/Mc7.Q2",
         "timestamp": 1786506219
     }
 ]

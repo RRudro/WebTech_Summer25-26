@@ -38,14 +38,13 @@ include "../Controller/LoginValidation.php";
                     <td> <label for="UserName"> User Name: </label></td> 
                   
                 <td> <input type="text" id="username" name="username" placeholder="Enter Your Name">
-                <?php echo $name; ?>    
+                <?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?>    
             </td>
                 </tr>
 
                 <tr>
                     <td> <label for="Password"> Password: </label></td>
                 <td> <input type="password" id="Password" name="Password">
-                <?php echo $password; ?>
                 </td>
                 </tr>
             </table>

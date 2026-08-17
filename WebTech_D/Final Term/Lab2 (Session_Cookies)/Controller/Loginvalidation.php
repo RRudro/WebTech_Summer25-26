@@ -28,15 +28,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     if($valid)
         {
+            session_regenerate_id(true);
             $_SESSION["logged_in"] = true;
             $_SESSION["username"] = $name;
             $message= "Session Created";
             if($remember)
                 {
-                    setcookie("remember_user", $name, time()+ 86400*30, "/");
+                    setcookie("remember_user", $name, ["expires" => time()+ 86400*30, "path" => "/", "httponly" => true, "samesite" => "Lax", "secure" => !empty($_SERVER["HTTPS"])]);
                 }
                 else{
-                    setcookie("remember_user", "", time()-3600, "/");
+                    setcookie("remember_user", "", ["expires" => time()-3600, "path" => "/", "httponly" => true, "samesite" => "Lax", "secure" => !empty($_SERVER["HTTPS"])]);
                 }
         }
 

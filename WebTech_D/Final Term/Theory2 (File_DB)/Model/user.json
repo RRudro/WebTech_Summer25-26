@@ -1,12 +1,7 @@
 [
     {
         "username": "Rudro",
-        "password": "12345",
-        "timestamp": 1786440662
-    },
-    {
-        "username": "Rudro",
-        "password": "$2y$10$P91TVceOWSH6zjdN1hAiRezcHdAO1PQ8nyu1TqgloGeOaYUrtiK\/6",
+        "password": "$2y$10$P91TVceOWSH6zjdN1hAiRezcHdAO1PQ8nyu1TqgloGeOaYUrtiK/6",
         "timestamp": 1786440743
     },
     {
@@ -16,27 +11,27 @@
     },
     {
         "username": "Rudro",
-        "password": "$2y$10$oXvj\/A5joh1HKHgBlsPwdOvCOKUC8rQq\/.Rlvqdn2FjQCRSY92A2G",
+        "password": "$2y$10$oXvj/A5joh1HKHgBlsPwdOvCOKUC8rQq/.Rlvqdn2FjQCRSY92A2G",
         "timestamp": 1786874991
     },
     {
         "username": "Rudro",
-        "password": "$2y$10$3iNIZUY7TNro463XT\/fl3eYpUrgUH0j2etKf38cdKzkRY2gVECAEi",
+        "password": "$2y$10$3iNIZUY7TNro463XT/fl3eYpUrgUH0j2etKf38cdKzkRY2gVECAEi",
         "timestamp": 1786875044
     },
     {
         "username": "Rudro`",
-        "password": "$2y$10$867jHiH4zlT8vM12m\/m5yOEeKs1VsrG79ftB4Ilz36GNT6NRTsQmu",
+        "password": "$2y$10$867jHiH4zlT8vM12m/m5yOEeKs1VsrG79ftB4Ilz36GNT6NRTsQmu",
         "timestamp": 1786875057
     },
     {
         "username": "Rudro`",
-        "password": "$2y$10$wpJYdgaUhDCvWdSglustWuw7Z9M\/tJb1Y8sCrxSC6wQv9yhNBbSZC",
+        "password": "$2y$10$wpJYdgaUhDCvWdSglustWuw7Z9M/tJb1Y8sCrxSC6wQv9yhNBbSZC",
         "timestamp": 1786875223
     },
     {
         "username": "Rudro`",
-        "password": "$2y$10$NqLj\/CoYAosdUrKHXHEhje2IS\/O\/EwwtsRQDnMPEwchailIckpCCK",
+        "password": "$2y$10$NqLj/CoYAosdUrKHXHEhje2IS/O/EwwtsRQDnMPEwchailIckpCCK",
         "timestamp": 1786875234
     },
     {
@@ -51,12 +46,12 @@
     },
     {
         "username": "Rudro",
-        "password": "$2y$10$7uYzwXYy1CJQiTRF9VS7eO\/UIFFGfUYSBCc\/p4CmpfWPUWOHcz\/UK",
+        "password": "$2y$10$7uYzwXYy1CJQiTRF9VS7eO/UIFFGfUYSBCc/p4CmpfWPUWOHcz/UK",
         "timestamp": 1786875315
     },
     {
         "username": "Rudro",
-        "password": "$2y$10$1297IPdeqsMuEX9xwek6OeqztmG6TdB6D\/7b1vtKbvepRI6A24fLO",
+        "password": "$2y$10$1297IPdeqsMuEX9xwek6OeqztmG6TdB6D/7b1vtKbvepRI6A24fLO",
         "timestamp": 1786876845
     },
     {
@@ -66,12 +61,12 @@
     },
     {
         "username": "Rudro1",
-        "password": "$2y$10$qZf2l7XMv2HygyoXWcgwh.3oygZeAnEGtuJX2Q8b\/txbucoQ9i1AS",
+        "password": "$2y$10$qZf2l7XMv2HygyoXWcgwh.3oygZeAnEGtuJX2Q8b/txbucoQ9i1AS",
         "timestamp": 1786876916
     },
     {
         "username": "RifatRudro",
-        "password": "$2y$10$plf6UcUjntb84ChYzWI44O\/gUg1rTvEGjY\/V5XTNHp0p1MqO6dZMe",
+        "password": "$2y$10$plf6UcUjntb84ChYzWI44O/gUg1rTvEGjY/V5XTNHp0p1MqO6dZMe",
         "timestamp": 1786876973
     }
 ]

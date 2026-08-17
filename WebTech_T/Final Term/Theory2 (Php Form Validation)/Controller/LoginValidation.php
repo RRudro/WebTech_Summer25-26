@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
         if(!empty($name) && strlen($name)>=5)
             {
-                echo "User Name: ".$name;
+                echo "User Name: ".htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
                 echo "<br>";
             }
         else{
@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
         if(!empty($password) && strlen($password)>=5)
             {
-                echo "Password: ".$password;
+                echo "Password accepted";
                 echo "<br>"; 
             }
             else{
