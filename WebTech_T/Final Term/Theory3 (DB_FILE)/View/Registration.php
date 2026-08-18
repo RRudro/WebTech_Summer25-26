@@ -1,5 +1,5 @@
 <?php
-include "../Controller/RegistrationValidation.php";
+require "../Controller/RegistrationValidation.php";
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +32,7 @@ include "../Controller/RegistrationValidation.php";
         </script>
     </head>
     <body>
+        <?php if(!empty($message)) { echo "<p>".htmlspecialchars($message)."</p>"; } ?>
         <form enctype="multipart/form-data" method="post" action="" onsubmit="return collect_data()">
             <table> 
                 <tr>
