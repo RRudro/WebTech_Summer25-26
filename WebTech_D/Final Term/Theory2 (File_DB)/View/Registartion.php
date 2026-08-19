@@ -38,14 +38,13 @@ include "../Controller/RegistrationValidation.php";
             <tr>
                 <td> <label for="username"> User Name: </label></td>
                 <td> <input type="text" id="name" name="name">
-                <?php echo $name ?>
+                <?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?>
             </td>
             </tr>
 
              <tr>
                 <td> <label for="pass"> Password: </label></td>
                 <td> <input type="password" id="password" name="password">
-                <?php echo $password ?>
             </td>
             </tr>
 

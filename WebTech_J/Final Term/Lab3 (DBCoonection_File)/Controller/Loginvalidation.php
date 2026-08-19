@@ -26,39 +26,27 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         }
         if($valid)
             {
+        $database=new db();
+        $connection=$database->connection();
+        $result=$database->signin($connection, "users", $name, $password);
+        if($result === true)
+            {
+                session_regenerate_id(true);
                 $_SESSION["logged_in"]=true;
                 $_SESSION["username"]=$name;
                 $message="Log In Successful! Session Created";
 
             if($remember){
-                    setcookie("remember_user", $name, time() + 60*60*24*7, "/");
+                    setcookie("remember_user", $name, ["expires" => time() + 60*60*24*7, "path" => "/", "httponly" => true, "samesite" => "Lax", "secure" => !empty($_SERVER["HTTPS"])]);
             }
             else{
-                    setcookie("remember_user", "", time() - 3600, "/");
+                    setcookie("remember_user", "", ["expires" => time() - 3600, "path" => "/", "httponly" => true, "samesite" => "Lax", "secure" => !empty($_SERVER["HTTPS"])]);
             }
-        
-        $jsonfile="../Model/user.json";
-        $users=[];
-        if(file_exists($jsonfile)){
-            $jsonData=file_get_contents($jsonfile);
-            $users = json_decode($jsonData, true) ?? [];
-            $users []=[
-                'username' =>$name,
-                'password' =>password_hash($password, PASSWORD_DEFAULT),
-                'timestamp' => time()
-            ];
-        file_put_contents($jsonfile, json_encode($users, JSON_PRETTY_PRINT));
-        }
 
-        $database=new db();
-        $connection=$database->connection();
-        $result=$database->signin($connection, "users", $name, $password);
-        if($result !== false && $result->num_rows ==1)
-            {
                 Header("Location:../View/Dashboard.php");
             }
             else{
-                echo "Please try again";
+                $message="Invalid User Name or Password";
             }
             
         }

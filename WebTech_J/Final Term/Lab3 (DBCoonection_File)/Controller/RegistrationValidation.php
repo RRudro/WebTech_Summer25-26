@@ -27,15 +27,16 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         }
         if($valid)
             {
+                session_regenerate_id(true);
                 $_SESSION["logged_in"]=true;
                 $_SESSION["username"]=$name;
                 $message="Log In Successful! Session Created";
 
             if($remember){
-                    setcookie("remember_user", $name, time() + 60*60*24*7, "/");
+                    setcookie("remember_user", $name, ["expires" => time() + 60*60*24*7, "path" => "/", "httponly" => true, "samesite" => "Lax", "secure" => !empty($_SERVER["HTTPS"])]);
             }
             else{
-                    setcookie("remember_user", "", time() - 3600, "/");
+                    setcookie("remember_user", "", ["expires" => time() - 3600, "path" => "/", "httponly" => true, "samesite" => "Lax", "secure" => !empty($_SERVER["HTTPS"])]);
             }
         
         $jsonfile="../Model/user.json";
@@ -52,11 +53,24 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         }
         
         $path="";
-        if($file)
+        $allowedtypes=["jpg"=>"image/jpeg", "jpeg"=>"image/jpeg", "png"=>"image/png", "pdf"=>"application/pdf"];
+        if(!empty($file) && ($file["error"] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_OK)
             {
-                $uploaddirectory="../Uploads/";
-                $path=$uploaddirectory.basename($file["name"]);
-                move_uploaded_file($file["tmp_name"], $path);
+                $extension=strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
+                $mimetype=mime_content_type($file["tmp_name"]);
+                if(isset($allowedtypes[$extension]) && $allowedtypes[$extension] === $mimetype && $file["size"] <= 2*1024*1024)
+                    {
+                        $uploaddirectory="../Uploads/";
+                        $path=$uploaddirectory.bin2hex(random_bytes(8)).".".$extension;
+                        if(!move_uploaded_file($file["tmp_name"], $path))
+                            {
+                                $path="";
+                                $message="File Upload Failed";
+                            }
+                    }
+                    else{
+                        $message="Only JPG, PNG or PDF Files up to 2 MB are Allowed";
+                    }
             }
 
         }
