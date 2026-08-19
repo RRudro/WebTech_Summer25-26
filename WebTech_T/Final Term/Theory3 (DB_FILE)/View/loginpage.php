@@ -6,33 +6,13 @@ include "../Controller/LoginValidation.php";
 <html>
     <head> 
         <title> Login Page </title>
-        <script>
-            function collect_data()
-            {
-                let name= document.getElementById("username").value.trim();
-                let password= document.getElementById("password").value.trim();
-                let valid=true;
-                let message="";
-                if(name.length<5)
-                {
-                    message+="User Name Must be 5 Char";
-                    valid=false;
-                }
-                if(password.length<5)
-                {
-                    message+="Password Must be 5 Char";
-                    valid=false;
-                }
-                if(!valid)
-                {
-                    alert(message);
-                }
-                return valid;
-            }
-        </script>
+        <?php
+            require_once __DIR__ . '/../../../../shared/php/ClientValidation.php';
+            render_client_validation_script();
+        ?>
     </head>
     <body>
-        <form method="post" action="" onsubmit="return collect_data()">
+        <form method="post" action="" onsubmit="return collect_data('username', 'password')">
             <table> 
                 <tr>
                     <td> <label for="username"> User Name: </label></td> 
