@@ -1,8 +1,8 @@
 <?php
 include "../Model/db.php";
 
-$username=$_POST["username"] ?? "";
-if($username)
+$username=trim($_POST["username"] ?? "");
+if(empty($username))
     {
         echo "Username Required";
     }
