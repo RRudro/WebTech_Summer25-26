@@ -14,5 +14,5 @@ function CheckUser()
     }
     xhttp.open("POST", "../Controller/CheckUser.php", true);
     xhttp.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    xhttp.send("username"+username);
+    xhttp.send("username=" + username);
 }
